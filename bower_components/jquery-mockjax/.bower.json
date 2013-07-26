@@ -1,0 +1,16 @@
+{
+  "name": "jquery-mockjax",
+  "version": "1.5.2",
+  "main": [
+    "jquery.mockjax.js"
+  ],
+  "homepage": "https://github.com/appendto/jquery-mockjax",
+  "_release": "1.5.2",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.5.2",
+    "commit": "1791e1abb4c507b3fe53eda990c7e71ba2f9c836"
+  },
+  "_source": "git://github.com/appendto/jquery-mockjax.git",
+  "_target": "v1.5.2"
+}
