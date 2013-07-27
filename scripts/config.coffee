@@ -104,6 +104,7 @@ require.config
 
         document.getElementsByTagName("head")[0].appendChild(script);
 
+        jQuery.browser ?= {msie:false} # Hack for Aloha (new jQuery does not have a jQuery.browser)
         jQuery.browser.version = 10000 # Hack to fix aloha-editor's version checking
 
         return Aloha
