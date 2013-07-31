@@ -1,35 +1,42 @@
 (function () {
-  "use strict";
+    'use strict';
 
-  require({
-    baseUrl: '../scripts/',
+    // Load the config
+    require({
+        baseUrl: '../scripts/',
 
-    paths: {
-      cs: '../bower_components/require-cs/cs',
-      'coffee-script': '../bower_components/coffee-script/index',
-      jquery: '../bower_components/jquery/jquery',
-      mockjax: '../bower_components/jquery-mockjax/jquery.mockjax'
-    },
+        paths: {
+            jquery: 'libs/jquery/jquery',
+            mockjax: 'libs/jquery-mockjax/jquery.mockjax'
+        },
 
-    shim: {
-      mockjax: ['jquery']
-    }
-  }, ['cs!../test/demo-mock']);
+        shim: {
+            mockjax: ['jquery']
+        }
+    }, ['config'], function () {
+        // Load the mock data
+        require(['cs!../test/demo-mock'], function (mock) {
+            // Load the application after the config
+            require(['cs!app'], function (app) {
+                app.start();
+            });
+        });
+    });
 
-  /* If an error occurs in requirejs then change the loading HTML. */
-  require.onError = function (err) {
-    var title = document.getElementById('loading-text'),
-        bar = document.getElementById('loading-bar');
+    /* If an error occurs in requirejs then change the loading HTML. */
+    require.onError = function (err) {
+        var title = document.getElementById('loading-text'),
+            bar = document.getElementById('loading-bar');
 
-    if (title) {
-      title.innerHTML = 'Loading failed.';
-    }
+        if (title) {
+            title.innerHTML = 'Loading failed.';
+        }
 
-    if (bar) {
-      bar.className = 'bar bar-danger';
-    }
+        if (bar) {
+            bar.className = 'bar bar-danger';
+        }
 
-    throw err;
-  };
+        throw err;
+    };
 
 })();
