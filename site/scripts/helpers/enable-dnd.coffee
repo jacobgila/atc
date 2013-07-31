@@ -25,7 +25,7 @@ define [
   # so CSS can hide children and properly style the cloned element that is being dragged.
   enableContentDragging = (model, $content) ->
     if not $content.is('[data-media-type]')
-      throw new new Error('BUG: $content MUST be an element with a data-media-type attribute')
+      throw new Error('BUG: $content MUST be an element with a data-media-type attribute')
 
     $content.data('editor-model', model)
     $content.draggable
