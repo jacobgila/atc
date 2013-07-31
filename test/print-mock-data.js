@@ -1,12 +1,17 @@
-var requirejs = require('requirejs');
+(function () {
+    'use strict';
 
-requirejs.config({
-  paths: {
-    cs: __dirname + '/../node_modules/cs/cs',
-    mock: __dirname + '/data'
-  }
-});
+    var requirejs = require('requirejs');
 
-requirejs(['cs!./all-mock-data'], function(jsonData) {
-  console.log(JSON.stringify(jsonData));
-});
+    requirejs.config({
+        paths: {
+            cs: __dirname + '/../node_modules/cs/cs',
+            mock: __dirname + '/data'
+        }
+    });
+
+    requirejs(['cs!./all-mock-data'], function (jsonData) {
+        console.log(JSON.stringify(jsonData));
+    });
+
+})();

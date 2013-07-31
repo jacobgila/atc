@@ -66,12 +66,13 @@ module.exports = (grunt) ->
         devel: true
 
       source: [
-        'site/scripts/**/*.js'
+        'site/scripts/**/*.js',
+        'test/**/*.js'
       ]
 
     # JS Beautifier
     jsbeautifier:
-      files: ['site/scripts/**/*.js', '!site/scripts/libs/**']
+      files: ['site/scripts/**/*.js', 'test/**/*.js', '!site/scripts/libs/**']
       options:
         mode: "VERIFY_ONLY"
         space_after_anon_function: true
@@ -92,7 +93,7 @@ module.exports = (grunt) ->
           level: 'error'
           value: 15
 
-      source: ['site/scripts/**/*.coffee', '!site/scripts/libs/**']
+      source: ['site/scripts/**/*.coffee', 'test/**/*.coffee', '!site/scripts/libs/**']
       grunt: 'Gruntfile.coffee'
 
     # Recess
