@@ -20,24 +20,24 @@ Check the `./docs` directory to read through the different modules.
 
 ## Directory Layout
 
-* `scripts/collections/`   Backbone Collections
-* `scripts/configs/`       App and 3rd party configs
-* `scripts/controllers/`   Marionette Controllers
-* `scripts/helpers/`       Miscellaneous helper functions
-* `scripts/models/`        Backbone Models and Marionette Modules
-* `scripts/nls/`           Internationalized strings
-* `scripts/routers/`       Marionette Routers
-* `scripts/views/`         Backbone and Marionette Views
-* `scripts/views/layouts/` Marionette Layouts
-* `scripts/app.coffee`     Marionette Application
-* `scripts/config.coffee`  Requirejs Config
-* `scripts/main.js`        Initial Requirejs Loader
-* `scripts/session.coffee` Model of Session
-* `styles/`                LESS and CSS Styling
-* `templates/`             Handlebars Templates
-* `templates/helpers/`     Handlebars Helpers
-* `test/`                  Testable mock data and scripts
-* `index.html`             App's HTML Page
+* `site/scripts/collections/`   Backbone Collections
+* `site/scripts/configs/`       App and 3rd party configs
+* `site/scripts/controllers/`   Marionette Controllers
+* `site/scripts/helpers/`       Miscellaneous helper functions
+* `site/scripts/models/`        Backbone Models and Marionette Modules
+* `site/scripts/nls/`           Internationalized strings
+* `site/scripts/routers/`       Marionette Routers
+* `site/scripts/views/`         Backbone and Marionette Views
+* `site/scripts/views/layouts/` Marionette Layouts
+* `site/scripts/app.coffee`     Marionette Application
+* `site/scripts/config.coffee`  Requirejs Config
+* `site/scripts/main.js`        Initial Requirejs Loader
+* `site/scripts/session.coffee` Model of Session
+* `site/styles/`                LESS and CSS Styling
+* `site/templates/`             Handlebars Templates
+* `site/templates/helpers/`     Handlebars Helpers
+* `site/index.html`             App's HTML Page
+* `test/`                       Testable mock data and scripts
 
 License
 -------
