@@ -57,7 +57,7 @@ define ['backbone'], (Backbone) ->
       trickleEvents 'tree:change'
 
 
-    newNode: (options) -> throw new Erorr('BUG: Only the root can create new Pointer Nodes')
+    newNode: (options) -> throw new Error('BUG: Only the root can create new Pointer Nodes')
 
     getParent:   () -> @_tree_parent
     getChildren: () ->
