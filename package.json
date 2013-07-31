@@ -1,36 +1,52 @@
 {
-  "name": "atc",
-  "version": "0.0.1",
-  "description": "Authoring Tools Client (Javascript Book Editor)",
-  "main": "./scripts/main.js",
-  "directories": {
-    "test": "test"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "print-mock-data": "node ./test/print-mock-data.js",
-    "install": "bower install",
-    "update": "bower update"
-  },
-  "dependencies": {
-    "bower": "~1.0",
-    "requirejs": "~2.1",
-    "cs": "git://github.com/jrburke/require-cs.git"
-  },
-  "devDependencies": {
-    "docco": "~0.4.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Connexions/atc.git"
-  },
-  "keywords": [
-    "javascript",
-    "EPUB",
-    "editor",
-    "github",
-    "readium",
-    "writium"
-  ],
-  "author": "Philip Schatz"
+    "name": "atc",
+    "version": "0.0.1",
+    "description": "Authoring Tools Client (Javascript Book Editor)",
+
+    "directories": {
+        "test": "test"
+    },
+
+    "scripts": {
+        "prepublish": "grunt install --verbose",
+        "test": "grunt test --verbose",
+        "dist": "grunt dist --verbose",
+        "update": "bower update",
+        "print-mock-data": "node ./test/print-mock-data.js"
+    },
+
+    "dependencies": {
+        "grunt": "~0.4.1",
+        "grunt-shell": "~0.3.1",
+        "bower": "~1.0"
+    },
+
+    "devDependencies": {
+        "docco": "~0.4.0",
+        "grunt-contrib-requirejs": "~0.4.1",
+        "rjs-build-analysis": "~0.0.3",
+        "grunt-contrib-clean": "~0.5",
+        "grunt-contrib-jshint": "~0.6",
+        "grunt-coffeelint": "~0.0.7",
+        "grunt-recess": "~0.3.3",
+        "grunt-jsbeautifier": "~0.1.10",
+        "grunt-contrib-uglify": "~0.2.2",
+        "grunt-contrib-imagemin": "~0.1.4"
+    },
+
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Connexions/atc.git"
+    },
+
+    "keywords": [
+        "javascript",
+        "EPUB",
+        "editor",
+        "github",
+        "readium",
+        "writium"
+    ],
+
+    "author": "Philip Schatz"
 }
