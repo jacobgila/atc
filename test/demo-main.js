@@ -3,9 +3,11 @@
 
     // Load the config
     require({
-        baseUrl: '../scripts/',
+        baseUrl: '../site/scripts/',
 
         paths: {
+            test: '../../test',
+            mock: '../../test/data',
             jquery: 'libs/jquery/jquery',
             mockjax: 'libs/jquery-mockjax/jquery.mockjax'
         },
@@ -15,7 +17,7 @@
         }
     }, ['config'], function () {
         // Load the mock data
-        require(['cs!../test/demo-mock'], function (mock) {
+        require(['cs!test/demo-mock'], function () {
             // Load the application after the config
             require(['cs!app'], function (app) {
                 app.start();

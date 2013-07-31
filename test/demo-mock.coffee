@@ -1,10 +1,3 @@
-BOWER = '../bower_components' # The path to the downloaded bower components
-
-require.config
-  paths:
-    mock: '../test/data'
-    underscore: "#{BOWER}/lodash/lodash"
-
 define [
   'underscore'
   'jquery'
@@ -23,8 +16,6 @@ define [
   #                representing things like images, java applets, etc.
   _.each allMocks.content, (fields) -> memoryRepo[fields.id] = fields
   _.each (_.pairs allMocks.resources), (hash, bytes) -> memoryResources[hash] = bytes
-
-
 
 
   # GET session
@@ -106,7 +97,3 @@ define [
 
       res = memoryRepo[id]
       @responseText = JSON.stringify(res)
-
-
-  # Load the actual app
-  require(['cs!../scripts/config'])
