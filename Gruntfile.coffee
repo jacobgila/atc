@@ -127,19 +127,26 @@ module.exports = (grunt) ->
 
           stubModules: ['cs']
           modules: [{
-              name: 'main'
-              create: true
-              include: [
-                  'css'
-                  'main'
-                  'cs!views/layouts/workspace'
-              ]
-              excludeShallow: [
-                  'css/css-builder'
-                  'less/lessc-server'
-                  'less/lessc'
-              ]
-              exclude: ['coffee-script']
+            name: 'aloha'
+            override:
+              baseUrl: 'scripts/libs/aloha-editor/src/lib'
+              mainConfigFile: 'site/scripts/libs/aloha-editor/src/lib/aloha.js'
+              paths:
+                'configs': __dirname + '/site/scripts/configs'
+          }, {
+            name: 'main'
+            create: true
+            include: [
+              'css'
+              'main'
+              'cs!views/layouts/workspace'
+            ]
+            excludeShallow: [
+              'css/css-builder'
+              'less/lessc-server'
+              'less/lessc'
+            ]
+            exclude: ['aloha', 'coffee-script']
           }]
 
           done: (done, output) ->
