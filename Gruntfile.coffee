@@ -202,14 +202,6 @@ module.exports = (grunt) ->
           ext: '.png'
         }]
 
-    # Install
-    # ----
-
-    # Shell
-    shell:
-      bower:
-        command: 'bower install'
-
   # Dependencies
   # ============
   for name of pkg.dependencies when name.substring(0, 6) is 'grunt-'
@@ -237,10 +229,4 @@ module.exports = (grunt) ->
     'clean'
     'uglify:dist'
     # 'imagemin'
-  ]
-
-  # Install
-  # -----
-  grunt.registerTask 'install', [
-    'shell:bower'
   ]
