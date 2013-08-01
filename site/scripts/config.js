@@ -103,7 +103,7 @@
             },
 
             aloha: {
-                deps: ['jquery', 'bootstrapModal', 'bootstrapPopover', 'cs!configs/aloha', 'cs!configs/mathjax'],
+                deps: ['jquery', 'cs!configs/aloha', 'cs!configs/mathjax', 'bootstrapModal', 'bootstrapPopover'],
                 exports: 'Aloha',
                 init: function ($, alohaConfig, mathjaxConfig) {
                     var script = document.createElement('script'),
@@ -117,8 +117,6 @@
                     document.getElementsByTagName('head')[0].appendChild(script);
 
                     $.browser.version = 10000; // Hack to fix aloha-editor's version checking
-
-                    //return Aloha;
                 }
             }
         },
