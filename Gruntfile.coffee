@@ -64,6 +64,7 @@ module.exports = (grunt) ->
         # Environments
         browser: true
         devel: true
+        node: true
 
       source: [
         'site/scripts/**/*.js',

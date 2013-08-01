@@ -1,6 +1,6 @@
 define ['cs!./new-id'], (newId) ->
   return (fields) ->
-    throw 'BUG! title required' if not fields.title
+    throw new Error('BUG! title required') if not fields.title
 
     fields.mediaType = 'application/vnd.org.cnx.folder'
     fields.id ?= newId(fields)
