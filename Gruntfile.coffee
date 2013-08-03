@@ -3,6 +3,13 @@ module.exports = (grunt) ->
   fs = require('fs')
   pkg = require('./package.json')
 
+
+  console.log('Be sure to build Aloha First!')
+  console.log('By running node ./node_modules/.bin/r')
+  console.log('    -o site/scripts/libs/aloha-editor/build/aloha/build-profile-with-common-extra-plugins.js')
+  console.log('    dir=./site/scripts/libs/aloha-editor/dist')
+
+
   # Project configuration.
   grunt.initConfig
     pkg: pkg
@@ -125,15 +132,16 @@ module.exports = (grunt) ->
           skipDirOptimize: true
           optimize: 'uglify2'
 
+          # Point to the built version of Aloha
+          # TODO: To build it you will need to run:
+          #    node ./node_modules/.bin/r
+          #      -o site/scripts/libs/aloha-editor/build/aloha/build-profile-with-common-extra-plugins.js
+          #      dir=./site/scripts/libs/aloha-editor/dist
+          paths:
+            aloha: 'libs/aloha-editor/dist/lib/aloha'
+
           stubModules: ['cs']
           modules: [{
-            name: 'aloha'
-            override:
-              baseUrl: 'scripts/libs/aloha-editor/src/lib'
-              mainConfigFile: 'site/scripts/libs/aloha-editor/src/lib/aloha.js'
-              paths:
-                'configs': __dirname + '/site/scripts/configs'
-          }, {
             name: 'main'
             create: true
             include: [
@@ -146,7 +154,7 @@ module.exports = (grunt) ->
               'less/lessc-server'
               'less/lessc'
             ]
-            exclude: ['aloha', 'coffee-script']
+            exclude: ['coffee-script']
           }]
 
           done: (done, output) ->
