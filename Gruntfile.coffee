@@ -125,7 +125,7 @@ module.exports = (grunt) ->
           dir: 'dist'
           mainConfigFile: 'src/scripts/config.js'
           findNestedDependencies: true
-          removeCombined: true
+          removeCombined: false
           keepBuildDir: false
           preserveLicenseComments: false
           skipDirOptimize: true
@@ -140,8 +140,8 @@ module.exports = (grunt) ->
             create: true
             include: [
               'css'
-              'main'
               'cs!views/layouts/workspace'
+              'main'
             ]
             excludeShallow: [
               'css/css-builder'
@@ -236,7 +236,7 @@ module.exports = (grunt) ->
   grunt.registerTask 'dist', [
     'shell:require-aloha'
     'requirejs'
-    'clean'
+    #'clean'
     'uglify:dist'
     # 'imagemin'
   ]
@@ -246,7 +246,7 @@ module.exports = (grunt) ->
   grunt.registerTask 'default', [
     'shell:require-aloha'
     'requirejs'
-    'clean'
+    #'clean'
     'uglify:dist'
     # 'imagemin'
   ]
