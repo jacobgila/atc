@@ -1,7 +1,7 @@
 {
     "name": "atc",
     "version": "0.0.1",
-    "main": "site/scripts/main.js",
+    "main": "src/scripts/main.js",
 
     "dependencies": {
         "requirejs": "2.1.6",

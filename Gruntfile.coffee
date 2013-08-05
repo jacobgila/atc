@@ -6,8 +6,8 @@ module.exports = (grunt) ->
 
   console.log('Be sure to build Aloha First!')
   console.log('By running node ./node_modules/.bin/r')
-  console.log('    -o site/scripts/libs/aloha-editor/build/aloha/build-profile-with-common-extra-plugins.js')
-  console.log('    dir=./site/scripts/libs/aloha-editor/dist')
+  console.log('    -o src/scripts/libs/aloha-editor/build/aloha/build-profile-with-common-extra-plugins.js')
+  console.log('    dir=./src/scripts/libs/aloha-editor/dist')
 
 
   # Project configuration.
@@ -20,7 +20,7 @@ module.exports = (grunt) ->
     # JSHint
     jshint:
       options:
-        ignores: ['site/scripts/libs/**']
+        ignores: ['src/scripts/libs/**']
         globals:
           require: true
           define: true
@@ -74,13 +74,13 @@ module.exports = (grunt) ->
         node: true
 
       source: [
-        'site/scripts/**/*.js',
+        'src/scripts/**/*.js',
         'test/**/*.js'
       ]
 
     # JS Beautifier
     jsbeautifier:
-      files: ['site/scripts/**/*.js', 'test/**/*.js', '!site/scripts/libs/**']
+      files: ['src/scripts/**/*.js', 'test/**/*.js', '!src/scripts/libs/**']
       options:
         mode: "VERIFY_ONLY"
         space_after_anon_function: true
@@ -101,7 +101,7 @@ module.exports = (grunt) ->
           level: 'error'
           value: 15
 
-      source: ['site/scripts/**/*.coffee', 'test/**/*.coffee', '!site/scripts/libs/**']
+      source: ['src/scripts/**/*.coffee', 'test/**/*.coffee', '!src/scripts/libs/**']
       grunt: 'Gruntfile.coffee'
 
     # Recess
@@ -110,8 +110,8 @@ module.exports = (grunt) ->
         options:
           strictPropertyOrder: false
         src: [
-          'site/styles/**/*.less'
-          'site/scripts/modules/**/*.less'
+          'src/styles/**/*.less'
+          'src/scripts/modules/**/*.less'
         ]
 
     # Dist
@@ -124,7 +124,7 @@ module.exports = (grunt) ->
           appDir: 'site'
           baseUrl: 'scripts'
           dir: 'dist'
-          mainConfigFile: 'site/scripts/config.js'
+          mainConfigFile: 'src/scripts/config.js'
           findNestedDependencies: true
           removeCombined: true
           keepBuildDir: false
@@ -135,8 +135,8 @@ module.exports = (grunt) ->
           # Point to the built version of Aloha
           # TODO: To build it you will need to run:
           #    node ./node_modules/.bin/r
-          #      -o site/scripts/libs/aloha-editor/build/aloha/build-profile-with-common-extra-plugins.js
-          #      dir=./site/scripts/libs/aloha-editor/dist
+          #      -o src/scripts/libs/aloha-editor/build/aloha/build-profile-with-common-extra-plugins.js
+          #      dir=./src/scripts/libs/aloha-editor/dist
           paths:
             aloha: 'libs/aloha-editor/dist/lib/aloha'
 

@@ -20,23 +20,23 @@ Check the `./docs` directory to read through the different modules.
 
 ## Directory Layout
 
-* `site/scripts/collections/`   Backbone Collections
-* `site/scripts/configs/`       App and 3rd party configs
-* `site/scripts/controllers/`   Marionette Controllers
-* `site/scripts/helpers/`       Miscellaneous helper functions
-* `site/scripts/models/`        Backbone Models and Marionette Modules
-* `site/scripts/nls/`           Internationalized strings
-* `site/scripts/routers/`       Marionette Routers
-* `site/scripts/views/`         Backbone and Marionette Views
-* `site/scripts/views/layouts/` Marionette Layouts
-* `site/scripts/app.coffee`     Marionette Application
-* `site/scripts/config.coffee`  Requirejs Config
-* `site/scripts/main.js`        Initial Requirejs Loader
-* `site/scripts/session.coffee` Model of Session
-* `site/styles/`                LESS and CSS Styling
-* `site/templates/`             Handlebars Templates
-* `site/templates/helpers/`     Handlebars Helpers
-* `site/index.html`             App's HTML Page
+* `src/scripts/collections/`   Backbone Collections
+* `src/scripts/configs/`       App and 3rd party configs
+* `src/scripts/controllers/`   Marionette Controllers
+* `src/scripts/helpers/`       Miscellaneous helper functions
+* `src/scripts/models/`        Backbone Models and Marionette Modules
+* `src/scripts/nls/`           Internationalized strings
+* `src/scripts/routers/`       Marionette Routers
+* `src/scripts/views/`         Backbone and Marionette Views
+* `src/scripts/views/layouts/` Marionette Layouts
+* `src/scripts/app.coffee`     Marionette Application
+* `src/scripts/config.coffee`  Requirejs Config
+* `src/scripts/main.js`        Initial Requirejs Loader
+* `src/scripts/session.coffee` Model of Session
+* `src/styles/`                LESS and CSS Styling
+* `src/templates/`             Handlebars Templates
+* `src/templates/helpers/`     Handlebars Helpers
+* `src/index.html`             App's HTML Page
 * `test/`                       Testable mock data and scripts
 
 License

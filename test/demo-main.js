@@ -3,7 +3,7 @@
 
     // Load the config
     require({
-        baseUrl: '../site/scripts/',
+        baseUrl: '../src/scripts/',
 
         paths: {
             test: '../../test',
