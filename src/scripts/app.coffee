@@ -17,15 +17,13 @@ define [
     main: '#main'
 
   app.on 'start', (options) ->
-
     # Register all the mediaTypes used
     mediaTypes.add Book
     mediaTypes.add Folder
     mediaTypes.add Module
 
-
     # Load router (it registers globally to Backbone.history)
-    require ['cs!controllers/routing', 'cs!routers/router'], (controller) =>
+    require ['cs!controllers/routing', 'cs!router'], (controller) =>
       # set the main div for all the layouts
       controller.main = @main
 

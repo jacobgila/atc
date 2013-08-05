@@ -3,13 +3,6 @@ module.exports = (grunt) ->
   fs = require('fs')
   pkg = require('./package.json')
 
-
-  console.log('Be sure to build Aloha First!')
-  console.log('By running node ./node_modules/.bin/r')
-  console.log('    -o src/scripts/libs/aloha-editor/build/aloha/build-profile-with-common-extra-plugins.js')
-  console.log('    dir=./src/scripts/libs/aloha-editor/dist')
-
-
   # Project configuration.
   grunt.initConfig
     pkg: pkg
@@ -117,11 +110,17 @@ module.exports = (grunt) ->
     # Dist
     # ----
 
+    # Shell
+    shell:
+      'require-aloha':
+        command: 'r.js -o src/scripts/libs/aloha-editor/build/aloha/build-profile-with-common-extra-plugins.js
+         dir=./src/scripts/libs/aloha-editor/dist'
+
     # Requirejs Optimizer
     requirejs:
       compile:
         options:
-          appDir: 'site'
+          appDir: 'src'
           baseUrl: 'scripts'
           dir: 'dist'
           mainConfigFile: 'src/scripts/config.js'
@@ -132,15 +131,10 @@ module.exports = (grunt) ->
           skipDirOptimize: true
           optimize: 'uglify2'
 
-          # Point to the built version of Aloha
-          # TODO: To build it you will need to run:
-          #    node ./node_modules/.bin/r
-          #      -o src/scripts/libs/aloha-editor/build/aloha/build-profile-with-common-extra-plugins.js
-          #      dir=./src/scripts/libs/aloha-editor/dist
           paths:
             aloha: 'libs/aloha-editor/dist/lib/aloha'
 
-          stubModules: ['cs']
+          #stubModules: ['cs']
           modules: [{
             name: 'main'
             create: true
@@ -154,7 +148,7 @@ module.exports = (grunt) ->
               'less/lessc-server'
               'less/lessc'
             ]
-            exclude: ['coffee-script']
+            #exclude: ['coffee-script']
           }]
 
           done: (done, output) ->
@@ -240,6 +234,7 @@ module.exports = (grunt) ->
   # Dist
   # -----
   grunt.registerTask 'dist', [
+    'shell:require-aloha'
     'requirejs'
     'clean'
     'uglify:dist'
@@ -249,6 +244,7 @@ module.exports = (grunt) ->
   # Default
   # -----
   grunt.registerTask 'default', [
+    'shell:require-aloha'
     'requirejs'
     'clean'
     'uglify:dist'
