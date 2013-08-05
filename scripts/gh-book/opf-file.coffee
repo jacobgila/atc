@@ -22,6 +22,22 @@ define [
 
       # Contains all entries in the OPF file (including images)
       @manifest = new Backbone.Collection()
+
+      # Changes to the manifest also changes the opf-file
+      @manifest.on 'add', (model, collection, options) =>
+        if not options.loading
+          # Triggering 'change' on the object has no effect because none of
+          # its own attributes actually changed. So explicitly set this to
+          # to dirty. Then update the xml. This is safe because the 'add'
+          # event is only triggered for new items on the collection, so adding
+          # the same file twice will not update the manifest twice.
+          @_isDirty = true
+          i = @$xml[0].createElement('item')
+          i.setAttribute('href', model.id)
+          i.setAttribute('id', model.id)
+          i.setAttribute('media-type', model.mediaType)
+          @$xml.find('package manifest').append(i)
+
       # Contains all items in the ToC (including internal nodes like "Chapter 3")
       @tocNodes = new Backbone.Collection()
       @tocNodes.add @
@@ -185,7 +201,7 @@ define [
 
         # Add it to the manifest and then do a batch add to `allContent`
         # at the end so the views do not re-sort on every add.
-        @manifest.add model
+        @manifest.add model, {loading:true}
 
         # If we stumbled upon the special navigation document
         # then remember it.
