@@ -136,9 +136,9 @@ module.exports = (grunt) ->
           findNestedDependencies: true
           removeCombined: false
           keepBuildDir: false
-          preserveLicenseComments: false
+          preserveLicenseComments: true
           skipDirOptimize: true
-          optimize: 'uglify2'
+          optimize: 'none' # Uglify later if needed
 
           paths:
             aloha: 'libs/aloha-editor/dist/lib/aloha'
@@ -256,6 +256,6 @@ module.exports = (grunt) ->
     'shell:require-aloha'
     'requirejs'
     #'clean'
-    'uglify:dist'
+    #'uglify:dist' Do not uglify by default
     # 'imagemin'
   ]
