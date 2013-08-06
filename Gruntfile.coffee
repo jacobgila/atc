@@ -117,6 +117,16 @@ module.exports = (grunt) ->
 
     # Requirejs Optimizer
     requirejs:
+      ### Drat. This _almost_ works... When it does the 'require-aloha' command can be removed.
+      aloha:
+        options:
+          baseUrl: 'src/scripts/libs/aloha-editor/src/lib'
+          mainConfigFile: 'src/scripts/libs/aloha-editor/build/aloha/build-profile-with-common-extra-plugins.js'
+          dir: 'src/scripts/libs/aloha-editor/dist'
+          #out: 'dist/aloha.js'
+          #name: 'src/lib/aloha'
+      ###
+
       compile:
         options:
           appDir: 'src'
