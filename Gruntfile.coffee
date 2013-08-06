@@ -113,8 +113,7 @@ module.exports = (grunt) ->
     # Shell
     shell:
       'require-aloha':
-        command: 'r.js -o src/scripts/libs/aloha-editor/build/aloha/build-profile-with-common-extra-plugins.js
-         dir=./src/scripts/libs/aloha-editor/dist'
+        command: './node_modules/.bin/r.js -o src/scripts/libs/aloha-editor/build/aloha/build-profile-with-oer.js dir=./src/scripts/libs/aloha-editor/dist'
 
     # Requirejs Optimizer
     requirejs:
