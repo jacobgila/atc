@@ -138,27 +138,31 @@ module.exports = (grunt) ->
           keepBuildDir: false
           preserveLicenseComments: true
           skipDirOptimize: true
+          normalizeDirDefines: 'all'
           optimize: 'none' # Uglify later if needed
 
           paths:
             aloha: 'libs/aloha-editor/dist/lib/aloha'
 
-          #stubModules: ['cs']
+          stubModules: ['cs']
           modules: [{
+            separateCSS: false
             name: 'main'
             create: true
             include: [
               'css'
               'cs!views/layouts/workspace'
-              'main'
+              'app'
             ]
             excludeShallow: [
               'css/css-builder'
               'less/lessc-server'
               'less/lessc'
+              'aloha'
             ]
             #exclude: ['coffee-script']
           }]
+
 
           done: (done, output) ->
             duplicates = require('rjs-build-analysis').duplicates(output)
