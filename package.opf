@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<package xmlns="http://www.idpf.org/2007/opf" version="3.0" xml:lang="en" unique-identifier="pub-id" prefix="cc: http://creativecommons.org/ns#">
+<?xml version="1.0" encoding="UTF-8"?><package xmlns="http://www.idpf.org/2007/opf" version="3.0" xml:lang="en" xmlns:xml="http://www.w3.org/XML/1998/namespace" unique-identifier="pub-id" prefix="cc: http://creativecommons.org/ns#">
   <metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
     <dc:title id="title">Moby-Dick</dc:title>
     <meta refines="#title" property="title-type">main</meta>
@@ -48,7 +47,7 @@
 -->
     <item id="ncx" href="toc.ncx" media-type="application/x-dtbncx+xml"/>
 
-  </manifest>
+  <item href="resources/f2395269398e39da5c8b560a8993f6d9148690ab.jpg" id="resources/f2395269398e39da5c8b560a8993f6d9148690ab.jpg" media-type="image/jpeg"/></manifest>
   <spine>
 <!--
     <itemref idref="cover" linear="no"/>
