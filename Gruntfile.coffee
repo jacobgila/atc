@@ -152,13 +152,12 @@ module.exports = (grunt) ->
             include: [
               'css'
               'cs!views/layouts/workspace'
-              'app'
+              'main'
             ]
             excludeShallow: [
               'css/css-builder'
               'less/lessc-server'
               'less/lessc'
-              'aloha'
             ]
             #exclude: ['coffee-script']
           }]

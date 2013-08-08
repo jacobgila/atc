@@ -8,11 +8,20 @@
 #
 # Aloha is configured by a global `Aloha` object.
 # This module creates it and when Aloha finishes loading its shim removes the global
+
+
+# **VERY IMPORTANT** for minifying and combining into 1 file:
+# Defer aloha so we can set the plugins, context, and jQuery **before** 'aloha' is defined.
+
+# Include if test because r.js complains when calculating the dependency tree
+@?.Aloha ?= {}
+@?.Aloha.deferInit = true # Load Aloha later. Aloha will replace `Aloha.deferInit` with a function that will `define('aloha')`
+
+
 define ['jquery'], ($) ->
 
-  @Aloha = @Aloha or {}
   @Aloha.settings =
-    jQuery: $ # Use the same version of jQuery
+    jquery: $ # Use the same version of jQuery
 
     # Disable global error handling and let the exception go all the way back to the browser
     errorhandling: false
@@ -25,6 +34,7 @@ define ['jquery'], ($) ->
     sidebar: {disabled:true}
 
     requireConfig:
+      context: '_' # By default Aloha uses the 'aloha' context and when combining into 1 file this causes problems for some reason
       paths:
         # Override location of jquery-ui and use our own. Because
         # jquery-ui and bootstrap conflict in a few cases (buttons,
